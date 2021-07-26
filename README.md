@@ -1,7 +1,13 @@
-# `archlinux:base-devel` image with yay included
+# `archlinux:base-devel` with yay
 
 Automated build is configured linked to offical `archlinux:base-devel` updates.
 So this image is never outdated. 
+
+## Docker pull command
+
+```
+docker pull rnbguy/archlinux-yay
+```
 
 ## Instruction
 
