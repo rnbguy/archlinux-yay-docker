@@ -1,8 +1,8 @@
-FROM archlinux:base
+FROM archlinux:base-devel
 LABEL maintainer="Ranadeep B <mail [at] rnbguy [dot] at>"
 
 # install dependencies
-RUN pacman -Syu sudo fakeroot binutils git --needed --asdeps --noconfirm
+RUN pacman -Syu git --asdeps --noconfirm
 
 # create user
 RUN useradd --create-home --system aur && \
