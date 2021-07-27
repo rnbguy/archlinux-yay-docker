@@ -21,3 +21,6 @@ RUN rm -rf /home/aur/yay && \
 
 # configure yay
 RUN sudo -u aur yay --cleanafter --removemake --save
+
+# onbuild hooks
+ONBUILD RUN sudo -u aur yay -Syu yay --noconfirm
