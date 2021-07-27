@@ -9,7 +9,7 @@ RUN useradd --create-home --system aur && \
     echo 'aur ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/aur
 
 # clone yay
-RUN sudo -u aur git clone --depth 1 https://aur.archlinux.org/yay-bin.git /home/aur/yay
+RUN sudo -u aur git clone --depth 1 https://aur.archlinux.org/yay.git /home/aur/yay
 
 # run makepkg
 RUN cd /home/aur/yay && \
@@ -22,5 +22,8 @@ RUN rm -rf /home/aur/yay && \
 # configure yay
 RUN sudo -u aur yay --cleanafter --removemake --save
 
+# keep yay cache for later
+RUN sudo -u aur yay -Syu yay --needed --noconfirm
+
 # build trigger
-ONBUILD RUN sudo -u aur yay -Syu yay-bin --needed --noconfirm
+ONBUILD RUN sudo -u aur yay -Syu yay --needed --noconfirm
