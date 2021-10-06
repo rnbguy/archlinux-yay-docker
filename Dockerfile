@@ -13,7 +13,7 @@ RUN sudo -u aur git clone --depth 1 https://aur.archlinux.org/yay.git /home/aur/
 
 # run makepkg
 RUN cd /home/aur/yay && \
-    sudo -u aur makepkg -ic --noconfirm
+    sudo -u aur makepkg -sic --noconfirm
 
 # cleanup
 RUN rm -rf /home/aur/yay && \
