@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: rnbguy/archlinux-yay:latest
+          images: rnbguy/archlinux-yay
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
