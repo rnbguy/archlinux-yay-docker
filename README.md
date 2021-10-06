@@ -1,6 +1,6 @@
 # `archlinux:base-devel` with yay
 
-Automated build is configured linked to offical `archlinux:base-devel` updates.
+A Github workflow will push a fresh build to Docker Hub daily.
 So this image is never outdated. 
 
 ## Docker pull command
