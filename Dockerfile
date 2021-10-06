@@ -23,7 +23,7 @@ RUN rm -rf /home/aur/yay && \
 RUN sudo -u aur yay --cleanafter --removemake --save
 
 # keep yay cache for later
-RUN sudo -u aur yay -Syu yay --needed --noconfirm
+RUN sudo -u aur yay -Syu yay-bin --needed --noconfirm
 
 # build trigger
-ONBUILD RUN sudo -u aur yay -Syu yay --needed --noconfirm
+ONBUILD RUN sudo -u aur yay -Syu yay-bin --needed --noconfirm
