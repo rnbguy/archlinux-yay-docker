@@ -2,7 +2,7 @@ FROM archlinux:base-devel
 LABEL maintainer="Ranadeep B <mail [at] rnbguy [dot] at>"
 
 # install dependencies
-RUN pacman -Syu git --asdeps --noconfirm
+RUN pacman -Syu git --needed --noconfirm
 
 # create user
 RUN useradd --create-home --system aur && \
@@ -17,7 +17,7 @@ RUN cd /home/aur/yay && \
 
 # cleanup
 RUN rm -rf /home/aur/yay && \
-    pacman -Qtdq | xargs -r pacman -Rcns --noconfirm
+    pacman -Qtdq | xargs -r pacman -Rnuss --noconfirm
 
 # configure yay
 RUN sudo -u aur yay --cleanafter --removemake --save
