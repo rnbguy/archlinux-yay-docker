@@ -1,8 +1,10 @@
 name: Publish Docker image
 
 on:
-  push:
   workflow_dispatch:
+  push:
+    paths:
+      - Dockerfile
   schedule:
     - cron: 0 0 * * *
 
